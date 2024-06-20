@@ -42,7 +42,10 @@ const abi = [
   {
     constant: true,
     inputs: [{ name: "", type: "uint256" }],
-    name: le,
+    name: "le",
     type: "constructor",
   },
 ];
+
+
+export default new web3.eth.Contract(abi,address);
