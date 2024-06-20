@@ -1,51 +1,45 @@
 import web3 from "./web3";
 
-const address = "0x2A82b5796198E8E367Bd33997A54fC8fd4e03c41";
+const address = "0xBd7F9A906291c120cA972cF223689b9C9445da1D";
 
 const abi = [
+  { inputs: [], stateMutability: "nonpayable", type: "constructor" },
   {
-    constant: true,
-    inputs: [],
-    name: "manager",
-    outputs: [{ name: "", type: "address" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: "pickWinner",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    constant: true,
-    inputs: [],
-    name: "getPlayers",
-    outputs: [{ name: "", type: "address[]" }],
-    payable: false,
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    constant: false,
     inputs: [],
     name: "enter",
     outputs: [],
-    payable: true,
     stateMutability: "payable",
     type: "function",
   },
   {
-    constant: true,
-    inputs: [{ name: "", type: "uint256" }],
-    name: "le",
-    type: "constructor",
+    inputs: [],
+    name: "getPlayers",
+    outputs: [
+      { internalType: "address payable[]", name: "", type: "address[]" },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "manager",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "pickWinner",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    name: "players",
+    outputs: [{ internalType: "address payable", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
   },
 ];
-
-
-export default new web3.eth.Contract(abi,address);
+export default new web3.eth.Contract(abi, address);
