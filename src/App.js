@@ -26,7 +26,7 @@ function App() {
   async function handleSubmit(event) {
     event.preventDefault();
  
-    const accounts = await web3.eth.getAccounts();
+    const accounts = await web3.eth.getAccounts();  
  
     setMessage("Waiting on transaction success...");
  
